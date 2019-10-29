@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <b-container  fluid>
         <h1>Vue.js + API Github</h1>
         <p class="lead">
             Listagem de issues de um repositório do Github via Vue.js.
@@ -9,26 +9,26 @@
           {{ response.message }}
         </div>
 
-        <div class="row">
-            <div class="col">
+        <b-row class="justify-content-md-center">
+            <b-col vol xs="12" sm="6" md="4" lg="4" xl="4">
                 <div class="form-group">
                     <input v-model="username"
                           type="text"
                           class="form-control"
                           placeholder="github username">
                 </div>
-            </div>
+            </b-col>
 
-            <div class="col">
+            <b-col vol xs="12" sm="6" md="4" lg="4" xl="4">
                 <div class="form-group">
                     <input v-model="repository"
                           type="text"
                           class="form-control"
                           placeholder="github repositório">
                 </div>
-            </div>
+            </b-col>
 
-            <div class="col-3">
+            <b-col vol xs="12" sm="12" md="4" lg="4" xl="4">
                 <div class="form-group">
                     <button  @click.prevent.stop = "getIssues()"
                       class="btn btn-success">PESQUISAR
@@ -38,8 +38,8 @@
                       class="btn btn-danger">LIMPAR
                     </button>
                 </div>
-            </div>
-        </div>
+            </b-col>
+        </b-row>
 
         <br><hr><br>
 
@@ -57,23 +57,29 @@
                   <img src="/static/loading.svg" width="30px" alt="">
                 </td>
               </tr>
-              <tr v-if="showIssues"
-                  v-for="issue in issues"
-                  :key="issue.number">
-                <td>
+              <template v-if="showIssues">
+                <tr
+                    v-for="issue in issues"
+                    :key="issue.number">
+                  <td>
 
-                  <router-link :to="{ name: 'GitHubIssue',
-                                      params: { name:
-                                                username,
-                                                repo: repository,
-                                                issue: issue.number}
-                                    }">
-                    {{ issue.number }}
-                  </router-link>
+                    <router-link 
+                      :to="{ 
+                          name: 'GitHubIssue',
+                          params: { 
+                            name: username,
+                            repo: repository,
+                            issue: issue.number
+                          }
+                      }"
+                    >
+                      {{ issue.number }}
+                    </router-link>
 
-                  </td>
-                <td>{{ issue.title }}</td>
-              </tr>
+                    </td>
+                  <td>{{ issue.title }}</td>
+                </tr>
+              </template>
 
             <tr>
                 <td v-if="noIssues"
@@ -82,7 +88,7 @@
             </tr>
             </tbody>
         </table>
-    </div>
+    </b-container>
 </template>
 
 <script>
@@ -174,3 +180,14 @@ export default {
   },
 };
 </script>
+
+<style>
+
+html {
+    height: 100%;
+}
+
+.table {
+  text-align-last: left;
+}
+</style>
