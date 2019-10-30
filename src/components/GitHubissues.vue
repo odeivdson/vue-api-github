@@ -10,7 +10,7 @@
         </div>
 
         <b-row class="justify-content-md-center">
-            <b-col vol xs="12" sm="6" md="4" lg="4" xl="4">
+            <b-col col xs="12" sm="6" md="4" lg="4" xl="4">
                 <div class="form-group">
                     <input v-model="username"
                           type="text"
@@ -19,7 +19,7 @@
                 </div>
             </b-col>
 
-            <b-col vol xs="12" sm="6" md="4" lg="4" xl="4">
+            <b-col col xs="12" sm="6" md="4" lg="4" xl="4">
                 <div class="form-group">
                     <input v-model="repository"
                           type="text"
@@ -28,7 +28,7 @@
                 </div>
             </b-col>
 
-            <b-col vol xs="12" sm="12" md="4" lg="4" xl="4">
+            <b-col col xs="12" sm="12" md="4" lg="4" xl="4">
                 <div class="form-group">
                     <button  @click.prevent.stop = "getIssues()"
                       class="btn btn-success">PESQUISAR
@@ -182,10 +182,6 @@ export default {
 </script>
 
 <style>
-
-html {
-    height: 100%;
-}
 
 .table {
   text-align-last: left;

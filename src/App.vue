@@ -14,8 +14,9 @@
     </nav>
 
     <br>
-
-    <router-view/>
+    <b-container fluid class="d-flex justify-content-center">
+        <router-view/>
+    </b-container>
   </div>
 </template>
 
@@ -26,6 +27,13 @@ export default {
 </script>
 
 <style>
+html {
+  margin: auto;
+  max-width: 1280px;
+}
+body {
+  background: #414259;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,13 +41,6 @@ export default {
   text-align: center;
   color: #FAFAFA;
   /* margin-top: 60px; */
-}
-
-body {
-  /*min-height: 100%; */
-  background: #4b6cb7;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
 

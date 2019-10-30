@@ -15,10 +15,8 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+<hr>
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Visualização: https://odeivdson.github.io/vue-api-github/
+
+![img](public/vue-git-api.png)
